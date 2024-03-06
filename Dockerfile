@@ -11,4 +11,5 @@
   # Copying our application into the container
   COPY todo todo
   # Running our application
-  CMD ["poetry", "run", "flask", "--app", "todo", "run", "--host", "0.0.0.0", "--port", "6400"]
+# Adding a delay to our application startup
+CMD ["bash", "-c", "sleep 10 && poetry run flask --app todo run --host 0.0.0.0 --port 6400"]
